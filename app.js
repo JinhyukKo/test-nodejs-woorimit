@@ -4,7 +4,7 @@ const app = express();
 const PORT =3000;
 
 //routing
-const router = require('./routes/home/index')
+const router = require('./src/routes/home/index')
 
 
 //setting
