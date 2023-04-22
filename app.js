@@ -2,6 +2,7 @@
 const express=require('express');
 const app = express();
 const PORT =3000;
+
 //routing
 const router = require('./routes/home/index')
 
@@ -16,7 +17,7 @@ app.set('view engine','ejs')
 app.use('/',router);
 
 
-
+//listen
 app.listen(PORT,()=>{
     
     console.log('server on');
