@@ -13,7 +13,9 @@ app.set('view engine','ejs')
 
 
 
+
 //middleware
+app.use(express.static(`${__dirname}/src/public/`));
 app.use('/',router);
 
 
