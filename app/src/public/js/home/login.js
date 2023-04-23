@@ -1,12 +1,5 @@
 'use strict'
 console.log('h');
-
-const id = document.querySelector('#id');
-const pw = document.querySelector('#password');
-const loginbtn = document.querySelector('#login-button');
-
-console.log(id, pw, loginbtn);
-loginbtn.addEventListener("click",login);
 function login(){
     const req = {
         id : id.value,
@@ -14,9 +7,19 @@ function login(){
     };
     fetch("/login",{
         method : "POST",
-        header: {
+        headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(req)
-    });
+    })
+    .then((res)=>res.json())
+    .then((res)=>console.log(res));
+    // .catch((error)=>console.error(error))
 }
+
+const id = document.querySelector('#id');
+const pw = document.querySelector('#password');
+const loginbtn = document.querySelector('#login-button');
+
+console.log(id, pw, loginbtn);
+loginbtn.addEventListener("click",login);
