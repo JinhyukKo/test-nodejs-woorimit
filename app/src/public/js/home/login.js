@@ -13,8 +13,15 @@ function login(){
         body: JSON.stringify(req)
     })
     .then((res)=>res.json())
-    .then((res)=>console.log(res));
-    // .catch((error)=>console.error(error))
+    .then((res)=>{
+        if(res.success){
+            location.href="/"
+        }else{
+            alert(res.msg);
+        }
+    }).catch((err)=>{
+        console.error('login error 404');
+    });
 }
 
 const id = document.querySelector('#id');
